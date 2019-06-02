@@ -57,18 +57,22 @@
 <link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
 
 
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-icon.png?v=5.1.4">
 
 
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png?v=5.1.4">
 
 
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png?v=5.1.4">
 
 
   <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
 
 
+  <link rel="manifest" href="/images/manifest.json">
+
+
+  <meta name="msapplication-config" content="/images/browserconfig.xml">
 
 
 
@@ -307,7 +311,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2019/06/01/hello-world/" itemprop="url">Hello World</a></h1>
+                <a class="post-title-link" href="/2019/06/01/hello-world/" itemprop="url">用Hexo+Next主题搭建自己的博客网站</a></h1>
         
 
         <div class="post-meta">
@@ -369,7 +373,7 @@
 
           
           
-             <span id="/2019/06/01/hello-world/" class="leancloud_visitors" data-flag-title="Hello World">
+             <span id="/2019/06/01/hello-world/" class="leancloud_visitors" data-flag-title="用Hexo+Next主题搭建自己的博客网站">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -402,19 +406,19 @@
       
         
           
-            <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
+            <p>Welcome to Ryhn’s Home, this blog site is built by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>!</p>
+<blockquote class="blockquote-center"><p>Si on veut, on peu </p>
+</blockquote>
 
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+<h2 id="搭建网站所需的Hexo"><a href="#搭建网站所需的Hexo" class="headerlink" title="搭建网站所需的Hexo"></a>搭建网站所需的Hexo</h2><blockquote>
+<p>参考的步骤可以在这片<a href="https://thief.one/2017/03/03/Hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E6%95%99%E7%A8%8B/" target="_blank" rel="noopener">文章</a>中找到.<br><a href="https://thief.one/2017/03/03/Hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E6%95%99%E7%A8%8B/" target="_blank" rel="noopener">Hexo的官网</a></p>
+</blockquote>
+<h2 id="搭建网站所需的主题资源"><a href="#搭建网站所需的主题资源" class="headerlink" title="搭建网站所需的主题资源"></a>搭建网站所需的主题资源</h2><blockquote>
+<p><a href="http://theme-next.iissnan.com/getting-started.html" target="_blank" rel="noopener">Next的官网</a><br>Hexo官网上也有一些其他朋有<a href="https://hexo.io/themes/" target="_blank" rel="noopener">分享的</a></p>
+</blockquote>
+<h2 id="具体学习Markdown的网站"><a href="#具体学习Markdown的网站" class="headerlink" title="具体学习Markdown的网站"></a>具体学习Markdown的网站</h2><blockquote>
+<p><a href="http://xianbai.me/learn-md/index.html" target="_blank" rel="noopener">Markdown语法</a></p>
+</blockquote>
 
           
         
