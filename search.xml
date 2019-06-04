@@ -1,6 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[观察者模式和发布订阅模式]]></title>
+    <url>%2F2019%2F06%2F04%2Fobserver-pub-sub%2F</url>
+    <content type="text"><![CDATA[记录下自己对观察者模式和发布订阅模式的理解，以及自己的一点思考。 首先两者都采用的是监听机制，即某件关注的事务发生变化时，就会通知对此感兴趣的一方去做相应的处理。 观察者模式在我看来更关注观察的对象，当对象发生改变，就会相应的通知对象中维护的那些监听者或者说依赖方去按照自己的方式处理改变了的对象信息，观察对象和观察者是一种强依赖的关系。感觉有点gossip girl的感觉，一举一动都活在公众的视野下，好没有隐私啊。 发布订阅模式在我看来更注重的是发布者，但是相比与观察者模式会多一层叫事件中心，你也可以看作是一个平台，就好比一个舞台，明星想来开演唱会，喜欢这个明星的粉丝们想来听演唱会。那么这里明星就是发布者，粉丝就是订阅者。当然啦，较真的人可能会认为明星的经纪人才是真正的发布者，他们才是和举办场地做沟通的人，那个这又扯远了，这个就扯到代理模式了。那么明星发布演唱会，他会把这个信息传递给舞台方也就是举办方，举办方收到消息就会通知所有关注这个消息的粉丝群体。通过这种方式解耦发布者和订阅者。 观察者是单向的，发布订阅是双向的。其实再仔细琢磨下，这个舞台可以做演唱会，可以做联欢晚会，可以做运动会，可以做拍卖会，等等这个舞台的功能有很多，每种舞台适合不同的观众群体，发布者可以根据适合的主题发布活动，订阅者也可以根据自己喜欢的主题订阅。]]></content>
+      <categories>
+        <category>pattern</category>
+      </categories>
+      <tags>
+        <tag>javascript</tag>
+        <tag>design pattern</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[控制DOM的几种js方法]]></title>
+    <url>%2F2019%2F06%2F03%2Fcreate-dom%2F</url>
+    <content type="text"><![CDATA[控制DOM的几种js方法译DOM, 亦可称之为文档对象模型，代表整个HTML文档，可以通过其来访问页面中的所有元素，每个载入浏览器的HTML文档都会成为document的对象。它使脚本访问HTML页面元素成为可能。 document.querySelector/document.querySelectorAll document.querySelector返回的是匹配的第一个元素document.querySelectorAll返回的是匹配的所有元素 1234//return an Elementconst ul_first = document.querySelector(&apos;ul&apos;);//return an array-like Elements const ul_list = document.querySelectorAll(&apos;ul&apos;); document.creatElement 根据tag name创建一个元素。具体说明，请移步到这里 Node.appendChild 追加节点在当前节点中子节点的末尾。 1234567let list = document.createElement(&apos;ul&apos;); // creates a new list[&apos;Paris&apos;, &apos;London&apos;, &apos;New York&apos;].forEach(city =&gt; &#123; let listItem = document.createElement(&apos;li&apos;); listItem.innerText = city; list.appendChild(listItem);&#125;);document.body.appendChild(list); Node.insertBefore 插入新节点在当前子节点的前面 12345let list = document.querySelector(&apos;ul&apos;);let firstCity = list.querySelector(&apos;ul &gt; li&apos;); // here we could use list.firstChild, but the purpose of this article is to show DOM API methodslet newCity = document.createElement(&apos;li&apos;);newCity.textContent = &apos;San Francisco&apos;;list.insertBefore(newCity, firstCity); Node.removeChild 从一个指定的DOM树节点中移除其指定的子节点，返回一个被移除的那个节点 123let list = document.querySelector(&apos;ul&apos;);let firstItem = list.querySelector(&apos;li&apos;);let removedItem = list.removeChild(firstItem); Node.replaceChild 用一个新的节点或者存在的节点替换掉指定节点中的某一个节点,返回一个被替换掉的那个老节点 12345let list = document.querySelector(&apos;ul&apos;);let oldItem = list.querySelector(&apos;li&apos;);let newItem = document.createElement(&apos;li&apos;);newItem.innerHTML = &apos;Las Vegas&apos;;let replacedItem = list.replaceChild(newItem, oldItem); Node.cloneNode 创建一个指定节点的副本，他有一个boolean的参数，是一个可选项，true代表克隆本身和其所有子节点，false代表只克隆自己，不包括子节点。建议是按需求指定这个boolean值。具体参见MDN 12let list = document.querySelector(&apos;ul&apos;);let clone = list.cloneNode(); Element.getAttribute/Element.setAttribute 给指定元素节点设置属性和获取属性 1234let list = document.querySelector(&apos;ul&apos;);list.setAttribute(&apos;id&apos;, &apos;my-list&apos;);let id = list.getAttribute(&apos;id&apos;);console.log(id); // outputs my-list Element.hasAttribute/Element.removeAttribute 检查当前元素是否有这个属性和移除这个属性 12345let list = document.querySelector(&apos;ul&apos;);if (list.hasAttribute(&apos;id&apos;)) &#123; console.log(&apos;list has an id&apos;); list.removeAttribute(&apos;id&apos;);&#125;; Element.insertAdjacentHTML 插入指定的HTML片段到指定的位置，输入一个位置信息和html字符串。这里需要注意的是，如果是客户端输入是需要转义的。如果只是插入文本节点最好是用node.textContent,因为这里需要HTML解释器的转换，具体参考MDN 12345678910&lt;!-- beforebegin --&gt;&lt;div&gt; &lt;!-- afterbegin --&gt; &lt;p&gt;Hello World&lt;/p&gt; &lt;!-- beforeend --&gt;&lt;/div&gt;&lt;!-- afterend --&gt;var list = document.querySelector(&apos;ul&apos;);list.insertAdjacentHTML(&apos;afterbegin&apos;, &apos;&lt;li id=&quot;first-item&quot;&gt;First&lt;/li&gt;&apos;);]]></content>
+      <categories>
+        <category>javascript</category>
+      </categories>
+      <tags>
+        <tag>DOM</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[java基础]]></title>
+    <url>%2F2019%2F06%2F03%2Fjava-basic-0603%2F</url>
+    <content type="text"><![CDATA[java异常相关的理解 如何理解异常和错误？ 首先从java类的结构上看，异常属于Exception的分支，而错误属于Error的分支。Exception和Error都继承自Throwable这个类。从异常的类型角度分析，我们可以认为Exception是checked exception，而Error是unchecked exception。虽然这么说并不严谨，因为运行时异常作为异常的一部分其实也是unchecked exception。参考checked-and-unchecked-exceptions-in-java 如何理解NoClassDefFoundError和ClassNotFoundException? 从异常的类型看，前者是unchecked exception，因此不需要try/catch或者throws。后者是checked exception是需要try/catch或者throws，否则编译不通过。从异常的导致的原因分析，两者都是由于JVM在classpath中无法定位指定的class引起的。 如果你在J2EE开发中遇到NoClassDefFoundError，那么最有可能的原因就是存在多个类加载器和多个目标类，即我们常说的Jar包冲突——关于Jar包冲突，一般可以使用下面两种方法解决：使用Maven Helper 这个插件，可以排除掉大部分jar包冲突；根据命令mvn dependency:tree -Dverbose -Dincludes=:logback-classic 调用Class.forName()、ClassLoader.findSystemClass()和ClassLoader.loadClass()等方法时可能会引起 java.lang.ClassNotFoundException NoClassDefFoundError是链接错误，发生在链接阶段，当解析引用的时候找不到对应的类，就会抛出java.lang.NoClassDefFoundError；ClassNotFoundException是异常，发生在运行阶段。参考文章java-classnotfoundexception-and-noclassdeffounderror 对于反应式编程(Reactive Stream),因为本身是异步的基于事件机制的而且代码堆栈不再是同步调用，如何处理异常？]]></content>
+      <categories>
+        <category>java基础</category>
+      </categories>
+  </entry>
+  <entry>
+    <title><![CDATA[面试题]]></title>
+    <url>%2F2019%2F06%2F02%2Finterview-pinduoduo%2F</url>
+    <content type="text"><![CDATA[拼多多面试题 介绍自己 介绍JET 介绍LA 在项目中做了什么，多少页面，做UI的有多少人 LA项目中的 viewmodel，uimodel，model是怎么划分的 Angular JS 双向绑定机制 怎么优化Performance 如果有极大量的数据和请求，浏览器会hang住很久，怎么优化。所有数据都是必须的 setTimeout setInterval 概念 一小时倒计时器，用setInterval 实现，但是用户反馈不准确，有时差，为什么？怎么改进？ CSS 如何实现水平居中和垂直居中 CSS 选择器优先级 jQuery on 实现原理 based on 上一条，如果off是on的返回，怎么写 MVC的含义 CSS position 有哪些取值，作用是什么 CSS 伪类有哪些 5个并发请求，怎么确保在他们都执行完之后，再做处理：Promise。面试官的意思还有别的答案 怎么实现$.when 跨域请求 Git 基础指令 怎么一键切换网页显示模式：白天、夜晚 VMWARE的面试题 介绍自己和项目 css: position 有哪些值及具体用法 怎么实现 css: z-index 具体用法（什么时候生效） 所有div都是绝对定位的，浏览器会怎么显示？ css选择器优先级 css伪类例举 :first-child :first-line 的区别 怎么实现垂直居中 怎么隐藏一个html元素 Display:none / visibility: hidden / html5 hidden 差别？ SASS / LESS，主要特点 事件流 HTTP请求种类 PUT vs POST PATCH Promise 与普通的异步请求有什么不同 ES6 语法 const obj = {a: 1}; obj.a = 2; // 问a的值被改了么？ VUE: 父子component之间怎么传值？ 为什么要用emit，而不允许子component直接修改props里的值 var a = 1; function test(b) { b = 2; }; test(a); // 求a var a = {key: 1}; function test(b) { b.key = 2; }; test(a); // 求a.key var a = {key: 1}; function test(b) { b = {key: 2}; }; test(a); // 求a.key 如何实现一个function add：使add(1)(2) 返回3 有一个包含重复数字的array，如何去重 斐波那契数列（1,2,3,5,8…）现实一个方法，输入n，得到数列里的第n个值 技术栈：Angular7 阿里口碑的面试题 面试官纠结于如何发布以及快速响应user发现的bug特别强调自主研究能力，自学，自己做项目 原型链响应式布局（面试官建议：PC Mobile 完全分开写）webPack事件冒泡和事件捕获事件的浏览器兼容性 反转StringString.pritotype.replace 第二个参数能否是函数？具体用法String 的 trim 不兼容的解决方案用Array模拟栈：Array.prototype.push &amp; Array.prototype.pop正则：贪婪、非贪婪正则里的特殊字符及用法 CSS水平居中垂直居中CSS 盒模型Flex具体语法Promise5个并发请求，如何做到所有请求都完成之后，再做处理？（注：若一个请求失败了，其他请求还要继续）ES6 asyncHTTP请求的种类，Get 和 POST 的区别HTTP请求返回301/302的指？重定向安全漏洞及如何预防 SAP面试题 Javascript deepcopy0.1+0.2精度问题原型链ajax底层实现Student.prototype === Student.protohtml5 新特性jQuery底层实现浏览器存储有哪些，及区别跨域knockoutjs 双向绑定原理Vue 双向绑定原理设计模式各种后端 Database 英文面：阅读理解]]></content>
+  </entry>
+  <entry>
     <title><![CDATA[用Hexo+Next主题搭建自己的博客网站]]></title>
     <url>%2F2019%2F06%2F01%2Fhello-world%2F</url>
     <content type="text"><![CDATA[Welcome to Ryhn’s Home, this blog site is built by Hexo! Si on veut, on peu 搭建网站所需的Hexo 参考的步骤可以在这片文章中找到.Hexo的官网 搭建网站所需的主题资源 Next的官网Hexo官网上也有一些其他朋有分享的 具体学习Markdown的网站 Markdown语法]]></content>
