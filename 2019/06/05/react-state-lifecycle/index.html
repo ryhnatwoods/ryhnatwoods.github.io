@@ -76,7 +76,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT">
+  <meta name="keywords" content="react,">
 
 
 
@@ -87,17 +87,18 @@
 
 
 
-<meta name="description" content="后知后觉的榆木脑袋">
-<meta property="og:type" content="website">
-<meta property="og:title" content="tags">
-<meta property="og:url" content="http://yoursite.com/tags/index.html">
+<meta name="description" content="将函数转化成类 为什么要把函数转化成类？为了让组件拥有局部更新能力类中状态的特点？状态是私有的，完全受控于当前的组件，定义为类的组件有些特性，局部状态就是如此。  有一个改写clock组件的例子 这个例子很详细，直接上(链接)[https://www.reactjscn.com/docs/state-and-lifecycle.html]  正确使用状态 这个知识点很关键的。  要用setStat">
+<meta name="keywords" content="react">
+<meta property="og:type" content="article">
+<meta property="og:title" content="跟着官方文档自学react_state_lifecycle">
+<meta property="og:url" content="http://yoursite.com/2019/06/05/react-state-lifecycle/index.html">
 <meta property="og:site_name" content="Ryhn&#39;s Home">
-<meta property="og:description" content="后知后觉的榆木脑袋">
+<meta property="og:description" content="将函数转化成类 为什么要把函数转化成类？为了让组件拥有局部更新能力类中状态的特点？状态是私有的，完全受控于当前的组件，定义为类的组件有些特性，局部状态就是如此。  有一个改写clock组件的例子 这个例子很详细，直接上(链接)[https://www.reactjscn.com/docs/state-and-lifecycle.html]  正确使用状态 这个知识点很关键的。  要用setStat">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-06-01T10:34:31.110Z">
+<meta property="og:updated_time" content="2019-06-05T14:17:02.022Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="tags">
-<meta name="twitter:description" content="后知后觉的榆木脑袋">
+<meta name="twitter:title" content="跟着官方文档自学react_state_lifecycle">
+<meta name="twitter:description" content="将函数转化成类 为什么要把函数转化成类？为了让组件拥有局部更新能力类中状态的特点？状态是私有的，完全受控于当前的组件，定义为类的组件有些特性，局部状态就是如此。  有一个改写clock组件的例子 这个例子很详细，直接上(链接)[https://www.reactjscn.com/docs/state-and-lifecycle.html]  正确使用状态 这个知识点很关键的。  要用setStat">
 
 
 
@@ -127,13 +128,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/tags/">
+  <link rel="canonical" href="http://yoursite.com/2019/06/05/react-state-lifecycle/">
 
 
 
 
 
-  <title>tags | Ryhn's Home</title>
+  <title>跟着官方文档自学react_state_lifecycle | Ryhn's Home</title>
   
 
 
@@ -280,40 +281,209 @@
 
   <div id="posts" class="posts-expand">
     
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/05/react-state-lifecycle/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Ryhn Wang">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/dog.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Ryhn's Home">
+    </span>
+
     
-    
-    <div class="post-block page">
       <header class="post-header">
 
-	<h1 class="post-title" itemprop="name headline">tags</h1>
-
-
-
-</header>
-
-      
-      
-      
-      <div class="post-body">
         
         
-          <div class="tag-cloud">
-            <div class="tag-cloud-title">
-                目前共计 8 个标签
-            </div>
-            <div class="tag-cloud-tags">
-              <a href="/tags/DOM/" style="font-size: 12px; color: #ccc">DOM</a> <a href="/tags/Hexo/" style="font-size: 12px; color: #ccc">Hexo</a> <a href="/tags/Markdown/" style="font-size: 12px; color: #ccc">Markdown</a> <a href="/tags/Next/" style="font-size: 12px; color: #ccc">Next</a> <a href="/tags/design-pattern/" style="font-size: 12px; color: #ccc">design pattern</a> <a href="/tags/flutter/" style="font-size: 12px; color: #ccc">flutter</a> <a href="/tags/javascript/" style="font-size: 12px; color: #ccc">javascript</a> <a href="/tags/react/" style="font-size: 30px; color: #111">react</a>
-            </div>
-          </div>
+          <h1 class="post-title" itemprop="name headline">跟着官方文档自学react_state_lifecycle</h1>
         
-      </div>
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-06-05T20:47:01+08:00">
+                2019-06-05
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/web/" itemprop="url" rel="index">
+                    <span itemprop="name">web</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/06/05/react-state-lifecycle/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/06/05/react-state-lifecycle/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2019/06/05/react-state-lifecycle/" class="leancloud_visitors" data-flag-title="跟着官方文档自学react_state_lifecycle">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
       
       
+
+      
+        <h2 id="将函数转化成类"><a href="#将函数转化成类" class="headerlink" title="将函数转化成类"></a>将函数转化成类</h2><blockquote>
+<p>为什么要把函数转化成类？为了让组件拥有局部更新能力<br>类中状态的特点？状态是私有的，完全受控于当前的组件，定义为类的组件有些特性，局部状态就是如此。</p>
+</blockquote>
+<h2 id="有一个改写clock组件的例子"><a href="#有一个改写clock组件的例子" class="headerlink" title="有一个改写clock组件的例子"></a>有一个改写clock组件的例子</h2><blockquote>
+<p>这个例子很详细，直接上(链接)[<a href="https://www.reactjscn.com/docs/state-and-lifecycle.html]" target="_blank" rel="noopener">https://www.reactjscn.com/docs/state-and-lifecycle.html]</a></p>
+</blockquote>
+<h2 id="正确使用状态"><a href="#正确使用状态" class="headerlink" title="正确使用状态"></a>正确使用状态</h2><blockquote>
+<p>这个知识点很关键的。</p>
+<ol>
+<li>要用setState方法更新state的状态，构造函数是唯一能够初始化state的地方</li>
+<li>当状态更新可能是异步的时候，需要接收的是一个函数而不是对象。函数可以异步调用的。</li>
+<li>状态更新合并，它可以分离的更新相应的状态里面的部分。这里的合并是浅合并，也就是说this.setState({comments})完整保留了this.state.posts，但完全替换了this.state.comments。</li>
+</ol>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">constructor(props) &#123;</span><br><span class="line">    super(props);</span><br><span class="line">    this.state = &#123;</span><br><span class="line">      posts: [],</span><br><span class="line">      comments: []</span><br><span class="line">    &#125;;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">componentDidMount() &#123;</span><br><span class="line">    fetchPosts().then(response =&gt; &#123;</span><br><span class="line">      this.setState(&#123;</span><br><span class="line">        posts: response.posts</span><br><span class="line">      &#125;);</span><br><span class="line">    &#125;);</span><br><span class="line"></span><br><span class="line">    fetchComments().then(response =&gt; &#123;</span><br><span class="line">      this.setState(&#123;</span><br><span class="line">        comments: response.comments</span><br><span class="line">      &#125;);</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="数据自顶向下流动"><a href="#数据自顶向下流动" class="headerlink" title="数据自顶向下流动"></a>数据自顶向下流动</h2><blockquote>
+<p>父组件和子组件都不能知道某个组件是状态还是无状态，并且它也不应该关心某个组件被定义为一个类还是一个函数。<br>状态可以作为属性传递给子组件<br>这通常称之为自顶向下或是单向数据流，任何状态始终有某一个特定组件持有，从该状态导出的任何数据或是UI都只影响树中下方的组件。</p>
+</blockquote>
+
       
     </div>
     
     
     
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/react/" rel="tag"># react</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/06/05/react-component-props/" rel="next" title="跟着官方文档自学react-component-props">
+                <i class="fa fa-chevron-left"></i> 跟着官方文档自学react-component-props
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/06/05/react-event/" rel="prev" title="跟着官方文档自学react_event">
+                跟着官方文档自学react_event <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
   </div>
 
 
@@ -356,8 +526,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -441,6 +620,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#将函数转化成类"><span class="nav-number">1.</span> <span class="nav-text">将函数转化成类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#有一个改写clock组件的例子"><span class="nav-number">2.</span> <span class="nav-text">有一个改写clock组件的例子</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#正确使用状态"><span class="nav-number">3.</span> <span class="nav-text">正确使用状态</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数据自顶向下流动"><span class="nav-number">4.</span> <span class="nav-text">数据自顶向下流动</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -598,9 +793,9 @@
     
       <script type="text/javascript">
         var disqus_config = function () {
-          this.page.url = 'http://yoursite.com/tags/index.html';
-          this.page.identifier = 'tags/index.html';
-          this.page.title = 'tags';
+          this.page.url = 'http://yoursite.com/2019/06/05/react-state-lifecycle/';
+          this.page.identifier = '2019/06/05/react-state-lifecycle/';
+          this.page.title = '跟着官方文档自学react_state_lifecycle';
         };
         var d = document, s = d.createElement('script');
         s.src = 'https://ryhnatwoods.disqus.com/embed.js';

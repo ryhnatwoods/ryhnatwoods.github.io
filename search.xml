@@ -1,6 +1,88 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[跟着官方文档自学react_event]]></title>
+    <url>%2F2019%2F06%2F05%2Freact-event%2F</url>
+    <content type="text"><![CDATA[事件处理 react元素的事件处理和dom元素处理事件有一点语法不同 react绑定属性的命名采用驼峰式写法 如果是JSX的语法，你需要传入的是函数而不是字符串 在react中必须显示使用preventDefault函数去阻止默认的行为 为一个元素初始渲染时提供一个监听器 需要谨慎对待回调函数的this指向。通常情况下，如果你没有在方法后面添加 () ，例如 onClick={this.handleClick}，你应该为这个方法绑定 this。如果你没有使用属性初始化器语法，你可以在回调函数中使用箭头函数。 向事件处理函数传递参数 分别通过 arrow functions 和 Function.prototype.bind 来为事件处理函数传递参数通过 bind 方式向监听函数传参，在类组件中定义的监听函数，事件对象 e 要排在所传递参数的后面]]></content>
+      <categories>
+        <category>web</category>
+      </categories>
+      <tags>
+        <tag>react</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[跟着官方文档自学react_state_lifecycle]]></title>
+    <url>%2F2019%2F06%2F05%2Freact-state-lifecycle%2F</url>
+    <content type="text"><![CDATA[将函数转化成类 为什么要把函数转化成类？为了让组件拥有局部更新能力类中状态的特点？状态是私有的，完全受控于当前的组件，定义为类的组件有些特性，局部状态就是如此。 有一个改写clock组件的例子 这个例子很详细，直接上(链接)[https://www.reactjscn.com/docs/state-and-lifecycle.html] 正确使用状态 这个知识点很关键的。 要用setState方法更新state的状态，构造函数是唯一能够初始化state的地方 当状态更新可能是异步的时候，需要接收的是一个函数而不是对象。函数可以异步调用的。 状态更新合并，它可以分离的更新相应的状态里面的部分。这里的合并是浅合并，也就是说this.setState({comments})完整保留了this.state.posts，但完全替换了this.state.comments。 123456789101112131415161718192021constructor(props) &#123; super(props); this.state = &#123; posts: [], comments: [] &#125;; &#125;componentDidMount() &#123; fetchPosts().then(response =&gt; &#123; this.setState(&#123; posts: response.posts &#125;); &#125;); fetchComments().then(response =&gt; &#123; this.setState(&#123; comments: response.comments &#125;); &#125;); &#125; 数据自顶向下流动 父组件和子组件都不能知道某个组件是状态还是无状态，并且它也不应该关心某个组件被定义为一个类还是一个函数。状态可以作为属性传递给子组件这通常称之为自顶向下或是单向数据流，任何状态始终有某一个特定组件持有，从该状态导出的任何数据或是UI都只影响树中下方的组件。]]></content>
+      <categories>
+        <category>web</category>
+      </categories>
+      <tags>
+        <tag>react</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[跟着官方文档自学react-component-props]]></title>
+    <url>%2F2019%2F06%2F05%2Freact-component-props%2F</url>
+    <content type="text"><![CDATA[组件&amp;props 组件可以将UI切割成独立可复用的部件。组件即函数，它接收任意的输入值，并返回需要展示的react元素 123456789function Welcome(props) &#123; return &lt;h1&gt;Hello, &#123;props.name&#125;&lt;/h1&gt;;&#125;const element = &lt;Welcome name=&quot;Sara&quot; /&gt;;ReactDOM.render( element, document.getElementById(&apos;root&apos;)); 组件名必须大写，个人认为组件其实就是对象，对象名称一般都以大写开头，所以这里是要大写开头哦。 组合组件 就是多个子组件拼凑自由组合在一起。 组件返回值只有一个根元素 提取组件 对于大型应用，多场景的情况，越小的组件也代表越大的灵活性，这允许我们像乐高玩具那样拼搭成我们喜欢的样子。而且这些小的组件还可以反复的利用。 Props的只读性 所有的react都必须像纯函数那样使用它们的props, 也就是你无论输入多少次一模一样的参数，它返回的结果应该都是一样的。是不是感觉有点幂等性的意思]]></content>
+      <categories>
+        <category>web</category>
+      </categories>
+      <tags>
+        <tag>react</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[跟着官方文档自学react-元素渲染]]></title>
+    <url>%2F2019%2F06%2F05%2Freact-render-element%2F</url>
+    <content type="text"><![CDATA[元素渲染 在react中，元素被当作react应用的最小单元，小到它可以是一个静态的div对象，大到它可以由许许多多小的组件汇聚而成。一般而言，如果一开始就是使用react开发的页面，那只会有一个react的容器去包裹。但是如果你是在其他项目中部分的引入react的组件，那么就可能会有多个容器存在。从更新元素渲染的角度，react元素在没有设置状态的情况下是不可变的，他就好像是过去某一个时间节点一样，你没法回到过去，不是? 但是确实react留下了把开启时间之门的钥匙，只不过是另一种方式的获取。 123456789101112//在这例子中，定时器每隔1s都会重新渲染整个react元素并添加到浏览器的dom树中。是不是感觉很累，就好像每次写错一个单词，老师都得让你罚抄整篇课文，好不爽。function tick() &#123; const element = ( &lt;div&gt; &lt;h1&gt;Hello, world!&lt;/h1&gt; &lt;h2&gt;It is &#123;new Date().toLocaleTimeString()&#125;.&lt;/h2&gt; &lt;/div&gt; ); ReactDOM.render(element, document.getElementById(&apos;root&apos;));&#125;setInterval(tick, 1000); react dom,一个可以开启时间钥匙之门的神，它会帮我们只更新那些需要更新的内容，为我们节约了成本和时间]]></content>
+      <categories>
+        <category>web</category>
+      </categories>
+      <tags>
+        <tag>react</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[跟着官方文档自学react-jsx]]></title>
+    <url>%2F2019%2F06%2F05%2Freact-jsx%2F</url>
+    <content type="text"><![CDATA[JSX简介 首先强调一下JSX不是HTML，它是一种javascript的语法扩展，这种语法的好处是可以和js无缝对接，你可以赋值给变量，你也可以直接在里面通过{}包裹去执行js表达式。不过文中特别提到为了增加代码的可读性，最好是在JSX代码外面包裹一层()。JSX支持标签的嵌套，允许表达式值的属性，属性通过小驼峰命名来定义JSX能有效防止xss攻击，因为在渲染前，它会将所有内容转换成字符串。JSX代表Object，BABEL转译器会把JSX转换成一个名为React.createElement()的方法调用，最终会返回一个react对象 1234567const element = &#123; type: &apos;h1&apos;, props: &#123; className: &apos;greeting&apos;, children: &apos;Hello, world&apos; &#125;&#125;;]]></content>
+  </entry>
+  <entry>
+    <title><![CDATA[跟着官方文档自学react-Hello World]]></title>
+    <url>%2F2019%2F06%2F05%2Freact-hello-world%2F</url>
+    <content type="text"><![CDATA[学习下用react来写hello world 首先需要引入react库，可以是通过script标签，也可以通过其他方式。效果可以在(jsFiddle)[https://jsfiddle.net/ryhnatwoods/d1584pe0/1/]上面看。 12ReactDOM.render(&lt;h1&gt;Hello, world!&lt;/h1&gt;, document.getElementById(&apos;app&apos;))]]></content>
+      <categories>
+        <category>web</category>
+      </categories>
+      <tags>
+        <tag>react</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[跟着官方文档自学react]]></title>
+    <url>%2F2019%2F06%2F05%2Fzixue-react-01%2F</url>
+    <content type="text"><![CDATA[跟着react官方文档自学_01On nous apprend à vivre quand la vie est passée. - Michel De Montaigne 当舒适的生活远离我们而去的时候，我们真的需要重新审视下自己，学习去适应新的生活。 点击进入react中文网首页React支持IE9和IE9+，和其他版本的浏览器。只不过需要polyfills 三个关键字很亮眼。 声明式：按照我的理解是我看到这个标签就知道这个标签作用在页面上的结果，很直观和简洁。不是很明白来自官网的解释“可以让你的代码更加可靠，且方便调试。” 组件化：创建好用有各自状态的组件，页面由一个一个组建搭配而成，感觉和乐高有点类似，很喜欢这种风格。 一次学习，随处编写：无论你现在正在用什么技术栈，你都可以随时引入react开发新特性。这个解释说实在我现在还有点懵 首页分享了分享了4个实例，感觉还不错。 组件：react组件使用render()函数构造组建显示的内容，输入的数据通过this.props传入render函数。 12345678910111213141516//这里首先构造一个HelloMessage的component对象，他接收name的属性对应的数据去返回一个react元素class HelloMessage extends React.Component &#123; render() &#123; return ( &lt;div&gt; Hello &#123;this.props.name&#125; &lt;/div&gt; ); &#125;&#125;//ReactDOM作为一个最外层的接口，将helloMessage元素渲染好添加到指定dom的容器中，并返回这个组件的引用。//其实它还有个可选的参数callback，可以在渲染更新后执行，具体可以看[render](https://www.reactjscn.com/docs/react-dom.html#render)ReactDOM.render( &lt;HelloMessage name=&quot;Taylor&quot; /&gt;, mountNode); 有状态的组建 除了使用外部传入的数据以外，组件还可以拥有其内部使用的状态数据，这个是通过this.state访问状态数据的，当组件状态发生改变时，会调用render方法重新渲染。 123456789101112131415161718192021222324252627282930313233343536//这个看名字是个计时器组件，在构造它时有个初始化的状态对象，0秒。它有一个读秒的方法，这个方法每调用一次会改变组件当前的状态，也就是+1秒。//这里你会发现组件中出现了两个生命周期的钩子函数，具体生命周期，可以看下[掘金这篇](https://juejin.im/post/5a062fb551882535cd4a4ce3).我先了解这个例子里的两个。//componentDidMount：组件已经渲染到页面后触发，此时页面中有了真正的DOM元素，可以进行DOM相关的操作//componentWillUnmount：组件销毁时被处罚，这里我们可以做一些清理的工作class Timer extends React.Component &#123; constructor(props) &#123; super(props); this.state = &#123; seconds: 0 &#125;; &#125; tick() &#123; this.setState(prevState =&gt; (&#123; seconds: prevState.seconds + 1 &#125;)); &#125; componentDidMount() &#123; //这里设置了一个定时器，每隔1是自动调用tick函数更新组件状态 this.interval = setInterval(() =&gt; this.tick(), 1000); &#125; componentWillUnmount() &#123; //组件销毁时，清理掉定时器 clearInterval(this.interval); &#125; render() &#123; return ( &lt;div&gt; Seconds: &#123;this.state.seconds&#125; &lt;/div&gt; ); &#125;&#125;ReactDOM.render(&lt;Timer /&gt;, mountNode); 简单的TODO应用 这里简单的混合使用了props和state去创建了一个todo的应用 123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960//这里还是构造了一个todo的react组件，在构造过程中我们发现，继承了父类构造函数，初始化组件状态，此组件有两个可变状态，待办事项列表也就是那个items，另一个是用户输入的文本内容，也就是text。这里还初始化了两个针对这个组件的用户行为，一个是绑定在onchange事件上的handleChange回调，另外一个是绑定在onSubmit时间上的handleSubmit回调。class TodoApp extends React.Component &#123; constructor(props) &#123; super(props); this.state = &#123; items: [], text: &apos;&apos; &#125;; this.handleChange = this.handleChange.bind(this); this.handleSubmit = this.handleSubmit.bind(this); &#125; render() &#123; return ( &lt;div&gt; &lt;h3&gt;TODO&lt;/h3&gt; &lt;TodoList items=&#123;this.state.items&#125; /&gt; &lt;form onSubmit=&#123;this.handleSubmit&#125;&gt; &lt;input onChange=&#123;this.handleChange&#125; value=&#123;this.state.text&#125; /&gt; &lt;button&gt; Add #&#123;this.state.items.length + 1&#125; &lt;/button&gt; &lt;/form&gt; &lt;/div&gt; ); &#125; handleChange(e) &#123; this.setState(&#123; text: e.target.value &#125;); &#125; handleSubmit(e) &#123; e.preventDefault(); if (!this.state.text.length) &#123; return; &#125; const newItem = &#123; text: this.state.text, id: Date.now() &#125;; this.setState(prevState =&gt; (&#123; items: prevState.items.concat(newItem), text: &apos;&apos; &#125;)); &#125;&#125;//创建了一个显示所有待办事项的列表组件class TodoList extends React.Component &#123; render() &#123; return ( &lt;ul&gt; &#123;this.props.items.map(item =&gt; ( &lt;li key=&#123;item.id&#125;&gt;&#123;item.text&#125;&lt;/li&gt; ))&#125; &lt;/ul&gt; ); &#125;&#125;ReactDOM.render(&lt;TodoApp /&gt;, mountNode); 在组件中使用第三方的库 这个是利用第三方的库(Remarkable)实现一个markdown的编辑器 123456789101112131415161718192021222324252627282930313233343536class MarkdownEditor extends React.Component &#123; constructor(props) &#123; super(props); this.handleChange = this.handleChange.bind(this); this.state = &#123; value: &apos;Type some *markdown* here!&apos; &#125;; &#125; handleChange(e) &#123; this.setState(&#123; value: e.target.value &#125;); &#125; getRawMarkup() &#123; const md = new Remarkable(); return &#123; __html: md.render(this.state.value) &#125;; &#125; render() &#123; return ( &lt;div className=&quot;MarkdownEditor&quot;&gt; &lt;h3&gt;Input&lt;/h3&gt; &lt;textarea onChange=&#123;this.handleChange&#125; defaultValue=&#123;this.state.value&#125; /&gt; &lt;h3&gt;Output&lt;/h3&gt; &lt;div className=&quot;content&quot; //这个属性是react dom自有的，用来替换innerHTML,详情请看[官网文档](https://www.reactjscn.com/docs/dom-elements.html) dangerouslySetInnerHTML=&#123;this.getRawMarkup()&#125; /&gt; &lt;/div&gt; ); &#125;&#125;ReactDOM.render(&lt;MarkdownEditor /&gt;, mountNode); 总结 中文react官网的第一页看完了，让我们继续深入探索react吧]]></content>
+      <categories>
+        <category>web前端</category>
+      </categories>
+      <tags>
+        <tag>react</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[flutter学习]]></title>
+    <url>%2F2019%2F06%2F04%2Fflutter-learn-01%2F</url>
+    <content type="text"><![CDATA[跟着技术胖学flutter 小技巧：在vscode上通过flutter run开启flutter应用。press r means hot reloadTo toggle the widget inspector (WidgetsApp.showWidgetInspectorOverride), press “i”.To toggle the display of construction lines (debugPaintSizeEnabled), press “p”.To simulate different operating systems, (defaultTargetPlatform), press “o”.To toggle the elevation checker, press “z”.To display the performance overlay (WidgetsApp.showPerformanceOverlay), press “P”.To enable timeline events for all widget build methods, (debugProfileWidgetBuilds), press “a”To save a screenshot to flutter.png, press “s”.To repeat this help message, press “h”. To detach, press “d”; to quit, press “q”. 学习地址： https://juejin.im/post/5c452bac6fb9a049af6d919a https://jspang.com/posts/2017/01/11/all-video-list.html]]></content>
+      <categories>
+        <category>前端</category>
+      </categories>
+      <tags>
+        <tag>flutter</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[观察者模式和发布订阅模式]]></title>
     <url>%2F2019%2F06%2F04%2Fobserver-pub-sub%2F</url>
     <content type="text"><![CDATA[记录下自己对观察者模式和发布订阅模式的理解，以及自己的一点思考。 首先两者都采用的是监听机制，即某件关注的事务发生变化时，就会通知对此感兴趣的一方去做相应的处理。 观察者模式在我看来更关注观察的对象，当对象发生改变，就会相应的通知对象中维护的那些监听者或者说依赖方去按照自己的方式处理改变了的对象信息，观察对象和观察者是一种强依赖的关系。感觉有点gossip girl的感觉，一举一动都活在公众的视野下，好没有隐私啊。 发布订阅模式在我看来更注重的是发布者，但是相比与观察者模式会多一层叫事件中心，你也可以看作是一个平台，就好比一个舞台，明星想来开演唱会，喜欢这个明星的粉丝们想来听演唱会。那么这里明星就是发布者，粉丝就是订阅者。当然啦，较真的人可能会认为明星的经纪人才是真正的发布者，他们才是和举办场地做沟通的人，那个这又扯远了，这个就扯到代理模式了。那么明星发布演唱会，他会把这个信息传递给舞台方也就是举办方，举办方收到消息就会通知所有关注这个消息的粉丝群体。通过这种方式解耦发布者和订阅者。 观察者是单向的，发布订阅是双向的。其实再仔细琢磨下，这个舞台可以做演唱会，可以做联欢晚会，可以做运动会，可以做拍卖会，等等这个舞台的功能有很多，每种舞台适合不同的观众群体，发布者可以根据适合的主题发布活动，订阅者也可以根据自己喜欢的主题订阅。]]></content>
