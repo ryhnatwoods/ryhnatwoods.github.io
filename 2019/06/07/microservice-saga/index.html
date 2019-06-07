@@ -76,7 +76,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT">
+  <meta name="keywords" content="saga,">
 
 
 
@@ -87,16 +87,18 @@
 
 
 
-<meta name="description" content="后知后觉的榆木脑袋">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Ryhn&#39;s Home">
-<meta property="og:url" content="http://yoursite.com/archives/2019/06/page/2/index.html">
+<meta name="description" content="微服务分布式事务Saga模式简介(转载)[https://www.jdon.com/49307] 在微服务环境下为什么不能用ACID事务？因为每个微服务都有自己得数据库，比如订单服务有自己的订单数据库，而客户服务有自己的客户数据库，如果有个业务需要跨订单和客户一起操作，那么一般使用JTA+XA方式跨订单数据库和客户数据库。  123456789101112131415@ Transactional">
+<meta name="keywords" content="saga">
+<meta property="og:type" content="article">
+<meta property="og:title" content="微服务分布式事务Saga模式简介">
+<meta property="og:url" content="http://yoursite.com/2019/06/07/microservice-saga/index.html">
 <meta property="og:site_name" content="Ryhn&#39;s Home">
-<meta property="og:description" content="后知后觉的榆木脑袋">
+<meta property="og:description" content="微服务分布式事务Saga模式简介(转载)[https://www.jdon.com/49307] 在微服务环境下为什么不能用ACID事务？因为每个微服务都有自己得数据库，比如订单服务有自己的订单数据库，而客户服务有自己的客户数据库，如果有个业务需要跨订单和客户一起操作，那么一般使用JTA+XA方式跨订单数据库和客户数据库。  123456789101112131415@ Transactional">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-06-07T07:51:29.151Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Ryhn&#39;s Home">
-<meta name="twitter:description" content="后知后觉的榆木脑袋">
+<meta name="twitter:title" content="微服务分布式事务Saga模式简介">
+<meta name="twitter:description" content="微服务分布式事务Saga模式简介(转载)[https://www.jdon.com/49307] 在微服务环境下为什么不能用ACID事务？因为每个微服务都有自己得数据库，比如订单服务有自己的订单数据库，而客户服务有自己的客户数据库，如果有个业务需要跨订单和客户一起操作，那么一般使用JTA+XA方式跨订单数据库和客户数据库。  123456789101112131415@ Transactional">
 
 
 
@@ -126,13 +128,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/archives/2019/06/page/2/">
+  <link rel="canonical" href="http://yoursite.com/2019/06/07/microservice-saga/">
 
 
 
 
 
-  <title>归档 | Ryhn's Home</title>
+  <title>微服务分布式事务Saga模式简介 | Ryhn's Home</title>
   
 
 
@@ -151,7 +153,7 @@
     
   
 
-  <div class="container sidebar-position-left page-archive">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -277,286 +279,260 @@
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block archive">
-    <div id="posts" class="posts-collapse">
-      <span class="archive-move-on"></span>
+  <div id="posts" class="posts-expand">
+    
 
-      <span class="archive-page-counter">
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/07/microservice-saga/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Ryhn Wang">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/dog.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Ryhn's Home">
+    </span>
+
+    
+      <header class="post-header">
+
         
         
+          <h1 class="post-title" itemprop="name headline">微服务分布式事务Saga模式简介</h1>
         
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-06-07T10:16:19+08:00">
+                2019-06-07
+              </time>
+            
+
+            
+
+            
+          </span>
+
           
-        
-        嗯..! 目前共计 17 篇日志。 继续努力。
-      </span>
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/microservice/" itemprop="url" rel="index">
+                    <span itemprop="name">microservice</span>
+                  </a>
+                </span>
 
-      
-
-        
-        
-        
-
-        
+                
+                
+              
+            </span>
           
-          <div class="collection-title">
-            <h1 class="archive-year" id="archive-year-2019">2019</h1>
-          </div>
-        
-        
 
-        
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/06/07/microservice-saga/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/06/07/microservice-saga/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+          
+          
+             <span id="/2019/06/07/microservice-saga/" class="leancloud_visitors" data-flag-title="微服务分布式事务Saga模式简介">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
 
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2019/06/05/zixue-react-01/" itemprop="url">
-              
-                <span itemprop="name">跟着官方文档自学react</span>
-              
-            </a>
-        
-      </h2>
+          
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-06-05T16:00:50+08:00" content="2019-06-05">
-          06-05
-        </time>
-      </div>
+          
 
-    </header>
-  </article>
+          
 
+        </div>
+      </header>
+    
 
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2019/06/04/flutter-learn-01/" itemprop="url">
-              
-                <span itemprop="name">flutter学习</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-06-04T13:56:49+08:00" content="2019-06-04">
-          06-04
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2019/06/04/observer-pub-sub/" itemprop="url">
-              
-                <span itemprop="name">观察者模式和发布订阅模式</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-06-04T09:21:02+08:00" content="2019-06-04">
-          06-04
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
       
 
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2019/06/03/create-dom/" itemprop="url">
-              
-                <span itemprop="name">控制DOM的几种js方法</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-06-03T23:19:53+08:00" content="2019-06-03">
-          06-03
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
       
+        <h2 id="微服务分布式事务Saga模式简介-转载-https-www-jdon-com-49307"><a href="#微服务分布式事务Saga模式简介-转载-https-www-jdon-com-49307" class="headerlink" title="微服务分布式事务Saga模式简介(转载)[https://www.jdon.com/49307]"></a>微服务分布式事务Saga模式简介(转载)[<a href="https://www.jdon.com/49307]" target="_blank" rel="noopener">https://www.jdon.com/49307]</a></h2><blockquote>
+<p>在微服务环境下为什么不能用ACID事务？<br>因为每个微服务都有自己得数据库，比如订单服务有自己的订单数据库，而客户服务有自己的客户数据库，如果有个业务需要跨订单和客户一起操作，那么一般使用JTA+XA方式跨订单数据库和客户数据库。</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">@ Transactional //事务元注解</span><br><span class="line">public void crossAction(XX)&#123;</span><br><span class="line">	//事务开始</span><br><span class="line"></span><br><span class="line">	//这里ORDERS是属于订单服务的私有数据库</span><br><span class="line">	SELECT ORDER_TOTAL FROM ORDERS WHERE CUSTOMER_ID = ?</span><br><span class="line"></span><br><span class="line">    //这里CUSTOMERS是属于客户服务的私有数据库</span><br><span class="line">	SELECT CREDIT_LIMIT FROM CUSTOMERS WHERE CUSTOMER_ID=?</span><br><span class="line"></span><br><span class="line">	INERT INTO ORDERS .....</span><br><span class="line"></span><br><span class="line">    //提交事务</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-        
-        
-        
+<p>以上JTA操作如果结合XA数据源配置，将会实现2PC两段事务提交。</p>
+<p>通过这段事务操作主要目的是为了维持业务上的不变性约束，比如一个人下订单的总金额不能超过这个人的信用卡授信额度，也就是说：一个人购买的商品总金额只能小于或等于他的信用卡授信额度。</p>
+<p>但是，2PC两段提交并不是微服务分布式架构的选择，因为存在单点风险，因为锁也会降低吞吐量。分布式事务如果不结合CAP定理是无法认识清楚，2PC其实只是选择了CAP中CA，虽然CA保证了可靠性，但是忽视网络通讯随时可能堵塞或失败，形成网络分区，反而不可靠，2PC带来的可靠性在分布式环境中是虚幻的。</p>
+<p>在分布式系统中，CAP定理是King，CAP定理无论是理论高度或是工程实施高度都是要高于传统事务的，在CAP定理的干预下，传统ACID事务走向了妥协，变成了BASE，也就是走向最终一致性的柔性事务。</p>
+<p>Saga是来自于1987年Hector GM和Kenneth Salem论文，从原理上看Saga好像比较简单：</p>
+<ol>
+<li><p>客户端发出订单创建请求createOrder()</p>
+</li>
+<li><p>OrderService会在其内部本地事务进行Order数据库操作，此时订单状态是待确认状态。</p>
+</li>
+<li><p>CustomerService会在其内部本地事务进行信用卡预授权操作，检查订单金额是否超过信用卡授信额度？</p>
+</li>
+<li><p>OrderService会在上一步确认业务不变性约束得到满足后，再次操作订单数据库状态，将订单状态改为确认状态。</p>
+</li>
+</ol>
+<p>但是，传统2PC/ACID事务中在上面任何一个步骤失败时会使用回滚操作，比如第三步出错，因为是两段提交，所以，第二段就不会进行确认提交，而是进行回滚Rollback，这样订单状态就恢复到当前事务之前的状态，但是在Saga这种BASE模式下,是无法实现像2PC回滚的，因为2PC是同步的，而Saga是异步的。</p>
+<p>那么在Saga这种异步模式如何实现客户的及时响应呢？有两种可选方案：首先是当Saga流程全部完成时再发送响应，这样的好处是响应中带有处理结果，但是这样会降低可用性，CAP定理中，分布式环境中满足了C一致性，只能降低了可用性A。</p>
+<p>第二种方案是推荐的，也就是在创建Saga之时，并不是等这个Saga流程完成时候，就发送响应给客户端，当然客户端可能只会得到一个事务ID号，并没有得到如期的处理结果，但是这样数据一致性比较弱的情况下，我们能获得很高的可用性A。</p>
+<p>客户端可以根据事务ID号再次查询处理结果（通过浏览器异步调用或服务器端推送都可以），比如之前调用createOrder()，获得order的id，然后，根据这个id号调用getOrder(id)，这样就能获得自己创建的订单。在传统同步环境下，这两步其实是在同一个步骤实现的，也就是createOrder()的结果就是一个订单order。</p>
+<p>通过UI界面设计可以降低这种不一致性导致的延迟体验：</p>
+<ol>
+<li><p>UI会通过异步方式进行查询调用，给用户的体验感觉还是创建订单后返回了一个创建好的订单</p>
+</li>
+<li><p>Saga处理也是可以很快的，小于100毫秒。</p>
+</li>
+<li><p>如果会花费很长时间，可以显示“正在处理中…”</p>
+</li>
+<li><p>Saga处理完成后可以采取服务器推送结果到浏览器。</p>
+</li>
+</ol>
+<blockquote>
+<p>Saga是否实现了ACID？</p>
+</blockquote>
+<p>ACID是原子性 一致性 隔离性和持久性的总称：</p>
+<ol>
+<li><p>原子性是确保事务中所有步骤要么全部完成，要么全部撤销回滚。Saga可以在事务中任何一个步骤发生失败时，通过调用应用服务的回滚接口实现撤销。</p>
+</li>
+<li><p>一致性其实是数据的完整性，这个可以由一个应用服务内部的本地事务通过数据库机制完成，跨服务的完整性(Referential integrity)由应用完成。</p>
+</li>
+<li><p>持久性Durability是由本地事务完成。</p>
+</li>
+</ol>
+<p>下面就剩下关键的隔离性，隔离性能够保证每个事务独立进行，不互相干扰，是与并发控制有关的，缺乏隔离性，会造成脏读 或者数据重复 更新丢失等问题。</p>
+<p>在Saga中解决隔离性的策略可通过两种方式：</p>
+<ol>
+<li><p>可交换的更新(Commutative updates), 比如借方帐户可以看成是贷方帐户的补偿</p>
+</li>
+<li><p>版本化，记录状态改变的历史记录，这些改变是可以交换的， 这其实是非常类似Event Sourcing事件溯源。</p>
+</li>
+</ol>
+<p>通过引入事件溯源能够实现很好的隔离性，因为回避了状态的实时并发修改，而是将这些修改动作作为事件记录下来，而是在状态需要读取时，对修改动作一个个进行播放，从而更新状态值到最新状态，也就是说，事件溯源回避了对状态的并发写操作，而是在读操作时进行状态实时计算。</p>
+<p>比如a的初始状态是1，有三个修改动作：加入了100，减去了50，加入了20，事件溯源是将这三个动作作为事件先记录下来，并不是立即计算a的最终状态，而是当有状态读取动作时，遍历事件集合进行计算：1+100-50+20=71，客户端会获得a的最终状态是71。</p>
+<p>Saga的两个形态</p>
+<p>Saga有两个方式：Orchestration(有中心协调者)和Choreography(无中心协调者)。</p>
+<p>Orchestration：各个服务围绕一个协调中心点，类似乐队需要一个指挥。</p>
+<p>和Choreography：各个服务之间没有一个协调点，靠服务自己相互直接协调，如果跳集体舞一样(当然有时会有一个领舞者，但是不明显)。</p>
+<p>无中心协调者的Saga方式需要使用事件概念，比如订单服务发布订单创建事件到客户服务那里，客户服务发布授信通过或不通过事件给订单服务。引入事件概念可能会增加业务应用开发的难度，除非业务应用时遵循DDD领域事件开发方式。</p>
+<p>有中心协调者的Saga方式需要可能存在协调者本身失败的单点风险，但是能够方便减轻业务应用的开发量，能够形成Saga框架，由框架自己管理流程前进和回退。</p>
+<p>比如以Eventuate Tram Saga框架代码应用为例，它定义了流程下一步和上一步补偿的各个业务动作：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">SagaDefinition&lt;CreateOrderSagaData&gt; sagaDefinition =</span><br><span class="line">          step()</span><br><span class="line">            .withCompensation(this::reject)</span><br><span class="line">          .step()</span><br><span class="line">            .invokeParticipant(this::reserveCredit)</span><br><span class="line">          .step()</span><br><span class="line">            .invokeParticipant(this::approve)</span><br><span class="line">          .build();</span><br></pre></td></tr></table></figure>
 
-        
-        
+<p>withCompensation是定义回退补偿动作，这里补偿是当前类的reject方法，而流程前进有两步：reserveCredit和approve两个方法。</p>
+<p>reserveCredit方法其实是进行信用卡授信额度验证的动作，发送一个ReserveCreditCommand命令到客户服务：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">private CommandWithDestination reserveCredit(CreateOrderSagaData data) &#123;</span><br><span class="line"></span><br><span class="line">    long orderId = data.getOrderId();</span><br><span class="line">    Long customerId = data.getOrderDetails().getCustomerId();</span><br><span class="line">    Money orderTotal = data.getOrderDetails().getOrderTotal();</span><br><span class="line">    return send(new ReserveCreditCommand(customerId, orderId, orderTotal))</span><br><span class="line">            .to(&quot;customerService&quot;)</span><br><span class="line">            .build();</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
 
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2019/06/03/java-basic-0603/" itemprop="url">
-              
-                <span itemprop="name">java基础</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-06-03T06:06:14+08:00" content="2019-06-03">
-          06-03
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
+<p>而客户服务则监听这个命令形式的消息：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">SagaCommandHandlersBuilder</span><br><span class="line">            .fromChannel(&quot;customerService&quot;)</span><br><span class="line">            .onMessage(ReserveCreditCommand.class, this::reserveCredit)</span><br><span class="line">            .build();</span><br></pre></td></tr></table></figure>
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2019/06/02/interview-pinduoduo/" itemprop="url">
-              
-                <span itemprop="name">面试题</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-06-02T22:49:40+08:00" content="2019-06-02">
-          06-02
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2019/06/01/hello-world/" itemprop="url">
-              
-                <span itemprop="name">用Hexo+Next主题搭建自己的博客网站</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-06-01T16:07:27+08:00" content="2019-06-01">
-          06-01
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
     </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/saga/" rel="tag"># saga</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/06/07/geektime-thinking-forbank-01/" rel="next" title="银行中后台与阿里中后台有何不同-读后感">
+                <i class="fa fa-chevron-left"></i> 银行中后台与阿里中后台有何不同-读后感
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
-
-  
-  <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/archives/2019/06/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/archives/2019/06/">1</a><span class="page-number current">2</span>
-  </nav>
+  </article>
 
 
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -564,6 +540,20 @@
 
 
           
+
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    </div>
+
+  
+
+
 
         </div>
         
@@ -584,8 +574,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -669,6 +668,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#微服务分布式事务Saga模式简介-转载-https-www-jdon-com-49307"><span class="nav-number">1.</span> <span class="nav-text">微服务分布式事务Saga模式简介(转载)[https://www.jdon.com/49307]</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -802,6 +817,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
@@ -819,6 +838,18 @@
       <script id="dsq-count-scr" src="https://ryhnatwoods.disqus.com/count.js" async></script>
     
 
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'http://yoursite.com/2019/06/07/microservice-saga/';
+          this.page.identifier = '2019/06/07/microservice-saga/';
+          this.page.title = '微服务分布式事务Saga模式简介';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://ryhnatwoods.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
     
 
   
