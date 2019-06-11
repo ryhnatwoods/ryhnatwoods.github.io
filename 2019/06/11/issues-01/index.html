@@ -76,7 +76,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT">
+  <meta name="keywords" content="js,">
 
 
 
@@ -87,16 +87,18 @@
 
 
 
-<meta name="description" content="后知后觉的榆木脑袋">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Ryhn&#39;s Home">
-<meta property="og:url" content="http://yoursite.com/tags/flutter/index.html">
+<meta name="description" content="今天在看一道练习题 然后发现有不少伙伴解题思路很好。模仿了下，发现有个监听事件始终无法被remove。奇怪了，代码里明明remove了那个监听，还是可以被触发。  12345678910111213141516171819202122232425let _handleMove = (evt) =&amp;gt; &amp;#123;                        var evt = evt.tou">
+<meta name="keywords" content="js">
+<meta property="og:type" content="article">
+<meta property="og:title" content="removeEventListener不工作了">
+<meta property="og:url" content="http://yoursite.com/2019/06/11/issues-01/index.html">
 <meta property="og:site_name" content="Ryhn&#39;s Home">
-<meta property="og:description" content="后知后觉的榆木脑袋">
+<meta property="og:description" content="今天在看一道练习题 然后发现有不少伙伴解题思路很好。模仿了下，发现有个监听事件始终无法被remove。奇怪了，代码里明明remove了那个监听，还是可以被触发。  12345678910111213141516171819202122232425let _handleMove = (evt) =&amp;gt; &amp;#123;                        var evt = evt.tou">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-06-11T10:53:19.409Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Ryhn&#39;s Home">
-<meta name="twitter:description" content="后知后觉的榆木脑袋">
+<meta name="twitter:title" content="removeEventListener不工作了">
+<meta name="twitter:description" content="今天在看一道练习题 然后发现有不少伙伴解题思路很好。模仿了下，发现有个监听事件始终无法被remove。奇怪了，代码里明明remove了那个监听，还是可以被触发。  12345678910111213141516171819202122232425let _handleMove = (evt) =&amp;gt; &amp;#123;                        var evt = evt.tou">
 
 
 
@@ -126,13 +128,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/tags/flutter/">
+  <link rel="canonical" href="http://yoursite.com/2019/06/11/issues-01/">
 
 
 
 
 
-  <title>标签: flutter | Ryhn's Home</title>
+  <title>removeEventListener不工作了 | Ryhn's Home</title>
   
 
 
@@ -151,7 +153,7 @@
     
   
 
-  <div class="container sidebar-position-left ">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -277,52 +279,199 @@
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block tag">
+  <div id="posts" class="posts-expand">
+    
 
-    <div id="posts" class="posts-collapse">
-      <div class="collection-title">
-        <h1>flutter<small>标签</small>
-        </h1>
-      </div>
+  
 
-      
-        
+  
+  
+  
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/11/issues-01/">
 
-      <h2 class="post-title">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Ryhn Wang">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/dog.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Ryhn's Home">
+    </span>
+
+    
+      <header class="post-header">
+
         
-            <a class="post-title-link" href="/2019/06/04/flutter-learn-01/" itemprop="url">
-              
-                <span itemprop="name">flutter学习</span>
-              
-            </a>
         
-      </h2>
+          <h1 class="post-title" itemprop="name headline">removeEventListener不工作了</h1>
+        
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-06-04T13:56:49+08:00" content="2019-06-04">
-          06-04
-        </time>
-      </div>
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-06-11T18:28:56+08:00">
+                2019-06-11
+              </time>
+            
 
-    </header>
-  </article>
+            
 
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/bug/" itemprop="url" rel="index">
+                    <span itemprop="name">bug</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/06/11/issues-01/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/06/11/issues-01/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2019/06/11/issues-01/" class="leancloud_visitors" data-flag-title="removeEventListener不工作了">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="今天在看一道练习题"><a href="#今天在看一道练习题" class="headerlink" title="今天在看一道练习题"></a>今天在看一道<a href="https://github.com/zhangxinxu/quiz/issues/27" target="_blank" rel="noopener">练习题</a></h2><blockquote>
+<p>然后发现有不少伙伴解题思路很好。<br>模仿了下，发现有个监听事件始终无法被remove。<br>奇怪了，代码里明明remove了那个监听，还是可以被触发。</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">let _handleMove = (evt) =&gt; &#123;</span><br><span class="line">                        var evt = evt.touches&amp;&amp;evt.touches[0] || evt;</span><br><span class="line">                        if (!this.start.length) &#123;</span><br><span class="line">                            this.start = [evt.pageX, evt.pageY];</span><br><span class="line">                        &#125;</span><br><span class="line">                        let boxes = document.querySelectorAll(&apos;.box&apos;);</span><br><span class="line">                        boxes.forEach((el)=&gt;&#123;</span><br><span class="line">                            if(_isCovered(evt,el))</span><br><span class="line">                                el.classList.add(&apos;active&apos;);</span><br><span class="line">                            else</span><br><span class="line">                                el.classList.remove(&apos;active&apos;);</span><br><span class="line">                        &#125;);</span><br><span class="line">                    &#125;;</span><br><span class="line"></span><br><span class="line">let _handleUp = (ev) =&gt; &#123;</span><br><span class="line">                        if (this.start.length) &#123;</span><br><span class="line">                            this.start.length = 0;</span><br><span class="line">                        &#125; else &#123;</span><br><span class="line">                            if (!ev.target.className.includes(&apos;box&apos;)) &#123;</span><br><span class="line">                                clear();</span><br><span class="line">                            &#125;</span><br><span class="line">                        &#125;</span><br><span class="line">                        window.getSelection().removeAllRanges();//清除选中区域</span><br><span class="line">                        document.removeEventListener(this.currEvent.move, _handleMove.bind(this));</span><br><span class="line">                    &#125;;</span><br></pre></td></tr></table></figure>
+
+<p>后面发现是因为bind(this),导致移除的回调函数和之前的不一样所致。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">let _handleMove = ((evt) =&gt; &#123;</span><br><span class="line">                        var evt = evt.touches&amp;&amp;evt.touches[0] || evt;</span><br><span class="line">                        if (!this.start.length) &#123;</span><br><span class="line">                            this.start = [evt.pageX, evt.pageY];</span><br><span class="line">                        &#125;</span><br><span class="line">                        let boxes = document.querySelectorAll(&apos;.box&apos;);</span><br><span class="line">                        boxes.forEach((el)=&gt;&#123;</span><br><span class="line">                            if(_isCovered(evt,el))</span><br><span class="line">                                el.classList.add(&apos;active&apos;);</span><br><span class="line">                            else</span><br><span class="line">                                el.classList.remove(&apos;active&apos;);</span><br><span class="line">                        &#125;);</span><br><span class="line">                    &#125;).bind(this);</span><br></pre></td></tr></table></figure>
+
+<p>这种细节的东西还是太容易忽视了</p>
+<p><a href="https://jsfiddle.net/ryhnatwoods/6dz4psr3/2/" target="_blank" rel="noopener">https://jsfiddle.net/ryhnatwoods/6dz4psr3/2/</a></p>
 
       
     </div>
+    
+    
+    
 
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/js/" rel="tag"># js</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/06/11/fanyi-polymer-practice/" rel="next" title="fanyi_polymer_practice">
+                <i class="fa fa-chevron-left"></i> fanyi_polymer_practice
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -330,6 +479,20 @@
 
 
           
+
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    </div>
+
+  
+
+
 
         </div>
         
@@ -350,8 +513,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -435,6 +607,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#今天在看一道练习题"><span class="nav-number">1.</span> <span class="nav-text">今天在看一道练习题</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -568,6 +756,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
@@ -585,6 +777,18 @@
       <script id="dsq-count-scr" src="https://ryhnatwoods.disqus.com/count.js" async></script>
     
 
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'http://yoursite.com/2019/06/11/issues-01/';
+          this.page.identifier = '2019/06/11/issues-01/';
+          this.page.title = 'removeEventListener不工作了';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://ryhnatwoods.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
     
 
   
