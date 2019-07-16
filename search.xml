@@ -1,6 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[JS每日练习]]></title>
+    <url>%2F2019%2F07%2F16%2Fjs-lianxi%2F</url>
+    <content type="text"><![CDATA[浏览器控制台上会打印什么123456var a = 10;function foo() &#123; console.log(a); var a = 20;&#125;foo(); 答案是：undefined原因：在执行函数前，js 引擎会先扫描代码块，变量声明提升到代码的最前面.这样的话，实际打印的 a 就是 undefined. 12345function foo() &#123; var a; console.log(a); a = 20;&#125; 如果我们使用 let 或 const 代替 var，输出是否相同12345function foo() &#123; console.log(a); let a = 20;&#125;foo(); 答案是会抛出异常： Uncaught ReferenceError: Cannot access ‘a’ before initialization这是因为 let 和 const 可以让变量在其作用域上受限于它使用的代码块，语句或表达式。这时的 a 会放在 TDZ 区域。只有执行到声明才能访问到它。 “newArray”中有哪些元素？123456var array = [];for (var i = 0; i &lt; 3; i++) &#123; array.push(() =&gt; i);&#125;var newArray = array.map(e =&gt; e());console.log(newArray); 答案是[3,3,3], 首先数组中保存了 3 个函数对象，在做 map 时，分别执行每一个函数，函数执行后返回 i，i 此时是全局变量 3，所以在数组中一共是 3 个 3. 如果我们在浏览器控制台中运行 foo 函数，是否会导致堆栈溢出错误123function foo() &#123; setTimeout(foo, 0);&#125; 答案是不会，调用 foo 会将 foo 函数推入堆栈，在处理内部代码时，js 引擎遇到 setTimeout，将 foo 函数传递给 webapi，并从函数返回，调用栈为空，计数器被设置为 0，foo 被发送到任务队列，由于此时调用栈为空，事件循环将 foo 推入调用栈进行处理，进程再次重复，堆栈不会溢出。 如果控制台中运行以下函数，页面是否会响应123function foo() &#123; return Promise.resolve().then(foo);&#125; 答案是不会响应，微任务队列总是在执行后返回到事件循环前清空，只有在微任务队列为空时，事件循环才会重新渲染。 我们能否以某种方式为下面的语句使用展开运算符而不导致类型错误12var obj = &#123; x: 1, y: 2, z: 3 &#125;;[...obj]; 答案是通过为 obj 添加[Symbol.iterator]函数 12345678910111213obj[Symbol.iterator] = function() &#123; return &#123; next: function() &#123; if (this._countDown === 3) &#123; const last = this._countDown; return &#123; value: last, done: true &#125;; &#125; this._countDown++; return &#123; value: this._countDown, done: false &#125;; &#125;, _countDown: 0 &#125;;&#125;; 运行以下代码片段会打印什么123456var obj = &#123; a: 1, b: 2 &#125;;Object.setPrototypeOf(obj, &#123; c: 3 &#125;);Object.defineProperty(obj, d, &#123; value: 4, enumerable: false &#125;);for (let prop in obj) &#123; console.log(prop);&#125; 答案是 a b c xGetter()会打印什么1234567891011var x = 10;var foo = &#123; x = 90; getX: function() &#123; return this.x; &#125;&#125;foo.getX();var xGetter = foo.getX;xGetter(); 会打印 10, 这里的 this 指向的是全局变量 10]]></content>
+      <categories>
+        <category>web前端</category>
+      </categories>
+      <tags>
+        <tag>js</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[scattered_knowledge]]></title>
+    <url>%2F2019%2F06%2F14%2Fscattered-knowledge%2F</url>
+    <content type="text"><![CDATA[如何在vscode中引入轻量级的类型检查机制？ jsDoc了解下。 打开vscode, 按下ctrl+shift+p,输入setting.json,找到对应的“Open Setting.json”,将“javascript.implicitProjectConfig.checkJs”:true配置进去。(默认是false) 打开或关闭检查，可以简单的跳过显示的配置，直接通过在页面顶部引入@ts-check或者@ts-nocheck来实现。 如果项目中有jsconfig.json文件，可以直接在compilerOptions下添加checkJs:true打开TypeScript的检查]]></content>
+      <categories>
+        <category>碎片小知识</category>
+      </categories>
+      <tags>
+        <tag>开发领域所遇到的零散小知识汇总</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[数据结构基础知识]]></title>
+    <url>%2F2019%2F06%2F12%2Fdata-structure-00%2F</url>
+    <content type="text"><![CDATA[数组的特点： 同等大小元素组成的连续的内存区域，索引是连续的整数。 O(1)访问任意数组的元素 O(1)增加或移除最末尾的元素 O(n)增加或移除任意位置的元素 链表的特点： O(1)从第一个开始插入或移除元素 对于双端链表，O(1)从最后开始插入或移除元素 O(n)的时间找到任意的元素 元素没有必要是连续的 用双端链表插入和移除的时间复杂度是O(1) 二叉树 深度优先 - 优先遍历子树，然后再遍历相邻的兄弟节点。(traverse one subtree before exploring a sibling tree) 广度优先 - 按照树的层级，逐级进行遍历。(travserse one level before processing to next level)]]></content>
+      <categories>
+        <category>data</category>
+      </categories>
+      <tags>
+        <tag>backend</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[removeEventListener不工作了]]></title>
     <url>%2F2019%2F06%2F11%2Fissues-01%2F</url>
     <content type="text"><![CDATA[今天在看一道练习题 然后发现有不少伙伴解题思路很好。模仿了下，发现有个监听事件始终无法被remove。奇怪了，代码里明明remove了那个监听，还是可以被触发。 12345678910111213141516171819202122232425let _handleMove = (evt) =&gt; &#123; var evt = evt.touches&amp;&amp;evt.touches[0] || evt; if (!this.start.length) &#123; this.start = [evt.pageX, evt.pageY]; &#125; let boxes = document.querySelectorAll(&apos;.box&apos;); boxes.forEach((el)=&gt;&#123; if(_isCovered(evt,el)) el.classList.add(&apos;active&apos;); else el.classList.remove(&apos;active&apos;); &#125;); &#125;;let _handleUp = (ev) =&gt; &#123; if (this.start.length) &#123; this.start.length = 0; &#125; else &#123; if (!ev.target.className.includes(&apos;box&apos;)) &#123; clear(); &#125; &#125; window.getSelection().removeAllRanges();//清除选中区域 document.removeEventListener(this.currEvent.move, _handleMove.bind(this)); &#125;; 后面发现是因为bind(this),导致移除的回调函数和之前的不一样所致。 12345678910111213let _handleMove = ((evt) =&gt; &#123; var evt = evt.touches&amp;&amp;evt.touches[0] || evt; if (!this.start.length) &#123; this.start = [evt.pageX, evt.pageY]; &#125; let boxes = document.querySelectorAll(&apos;.box&apos;); boxes.forEach((el)=&gt;&#123; if(_isCovered(evt,el)) el.classList.add(&apos;active&apos;); else el.classList.remove(&apos;active&apos;); &#125;); &#125;).bind(this); 这种细节的东西还是太容易忽视了 https://jsfiddle.net/ryhnatwoods/6dz4psr3/2/]]></content>
@@ -12,7 +45,7 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[fanyi_polymer_practice]]></title>
+    <title><![CDATA[Polymer 1.x企业级的实现经历(翻译)]]></title>
     <url>%2F2019%2F06%2F11%2Ffanyi-polymer-practice%2F</url>
     <content type="text"><![CDATA[Polymer 1.x企业级的实现经历(http://andrewstacy.com/blog/my-experience-with-polymer-1-at-enterprise-scale-introduction.html) 思考用户行业的特点 大量的特许经营的商店，并且每位私营业主在食品选择和制作，价格的定制上会有很多自主权 大量的产品变动和频繁的更新 需要做什么 需要一个框架，这个框架必须要满足以下的要求 可以即时响应客户需求 通过减少工作量降低公司成本 它可以使团队达到企业级的最佳实践和代码组织水平 需要有很好的文档 在公司快速成长的同时，好的文档是对员工快速适应最好的资源。 需要有高度的模块化作为核心 基于不同店家可以快速的大幅度的改变。 作者在选型时认为web components是未来的趋势，可能当下并不那么被看好。 那么Web Components到底为我们解决了什么问题？ 支持真个美国15000家加盟店 支持每家店不同的菜单界面的配置 支持超1w产品的支持 支持为每家店设置不同的界面布局 支持基于每餐（早，中，晚）的不同样式 基于NTP协议下的图片和高亮文本的同步 基于NTP协议下的菜单界面区域 提供舒适的用户编辑界面 3个月内验收 “Shadow DOM removes the brittleness of building web apps. The brittleness comes from the global nature of HTML, CSS, and JS.” (Bidelman) - 影子树去除了构建web应用中脆弱的东西，而这些脆弱的东西来自于html, css 和 js的天性。 “Shadow DOM fixes CSS and DOM. It introduces scoped styles to the web platform. Without tools or naming conventions, you can bundle CSS with markup, hide implementation details, and author self-contained components in vanilla JavaScript.” (Bidelman) - 影子树完善了css和dom， 它将scoped的样式带入网页平台。不需要借助工具，命名规范，你就可以把css和标签融合在一起，隐藏实现的细节，通过原生js创作独立的组件。 我们可以把web components组件看作是乐高玩具中的一块，我们可以以最小的成本随意的拼装 以下是web components至关重要的几点： HTML Templates Shadow DOM Custom elements HTML imports 项目的结构 Base Components 这个是应用中最小的部分，是最底层的一个单元，比如base-header,base-product-table, base-image-rotator等等 Region Components 这些是由基础单元组成的组合组件，提供整个菜单页中某一个区域的可视化部分 Layout Components 这些事控制区域组件需要在什么位置去展示的组件，它也是菜单页中的一部分 Master Components 这个是一个入口的组件包含页面所有可视化的部分，它是基于设备来选择布局]]></content>
       <categories>
