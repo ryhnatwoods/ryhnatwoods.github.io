@@ -1,6 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[滑动窗口]]></title>
+    <url>%2F2019%2F07%2F21%2Falgorithm-02%2F</url>
+    <content type="text"><![CDATA[滑动窗口模式用在给定数组或链表的特定窗口大小上执行所需的操作一般的解法是从第一个元素开始滑动窗口，维持一前一后两个游标，根据所求解的问题调整窗口长度 leetcode 53描述： Given an integer array nums,find the contiguous subarray (containing at least one number ， which has the largest sum and return its sum.Input: [-2,1,-3,4,-1,2,1,-5,4],Output: 6Explanation: [4,-1,2,1] has the largest sum = 6. 1234567891011121314151617/** * @param &#123;number[]&#125; nums * @return &#123;number&#125; */var maxSubArray = function(nums) &#123; let sum = 0, max = nums[0], size = nums.length; for (let i = 0; i &lt; size; i++) &#123; sum += nums[i]; max = max &gt; sum ? max : (max = sum); if (sum &lt; 0) &#123; sum = 0; &#125; &#125; return max;&#125;; leetcode 3描述：Given a string, find the length of the longest substring without repeating characters.Example 1:Input: “abcabcbb”Output: 3Explanation: The answer is “abc”, with the length of 3. 1234567891011121314151617181920212223242526/** * @param &#123;string&#125; s * @return &#123;number&#125; */var lengthOfLongestSubstring = function(s) &#123; const size = s.length, f1 = s.charAt(0), tmpArr = [f1]; if (size === 0) return 0; if (size === 1) return 1; let max = 0; for (let i = 1; i &lt; size; i++) &#123; let c = s.charAt(i), existed_pos = tmpArr.indexOf(c); if (existed_pos &gt; -1) &#123; if (i === size - 1) break; max = max &gt; tmpArr.length ? max : (max = tmpArr.length); i = i - (tmpArr.length - existed_pos - 1); c = s.charAt(i); tmpArr.length = 0; &#125; tmpArr.push(c); &#125; max = max &gt; tmpArr.length ? max : (max = tmpArr.length); return max;&#125;;]]></content>
+      <categories>
+        <category>算法</category>
+      </categories>
+      <tags>
+        <tag>滑动窗口模式</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[BF算法学习]]></title>
+    <url>%2F2019%2F07%2F21%2Falgorithm-01%2F</url>
+    <content type="text"><![CDATA[BF 算法 Brute-Force 算法， 是一种简单朴素的模式匹配算法，常用于在一个主串内查找一个子串的问题依据解题思路假设主串 S 和子串 T， 子串长度 M， 主串长度 N， 0 &lt; M &lt;= N 先比较 S[1]和 T[1], 如果相同，继续比较 S[2]和 T[2], 直到 M 如果不同，指针移动至 S[2],再重复第一次的比较 1234567891011121314151617181920212223function findSubArrayStartIndex(total, part) &#123; var size = total.length, matched_size = part.length; for (let i = 0; i &lt; size; i++) &#123; const tmp1 = total.slice(i, matched_size + i); if (isMatched(tmp1, part)) return i; &#125; return -1;&#125;function isMatched(part1, part2) &#123; if (part1.length !== part2.length) return false; const size = part1.length, flg = false; for (let i = 0; i &lt; size; i++) &#123; if (part1[i] !== part2[i]) &#123; flg = false; break; &#125; if (i === size - 1) flg = true; &#125; return flg;&#125; 在匹配失败时，主串的回溯的操作会影响效率，这种简单丢弃匹配信息的算法是其低效的原因。 参考自https://mp.weixin.qq.com/s?__biz=MzUyNjQxNjYyMg==&amp;mid=2247485906&amp;idx=1&amp;sn=f00a07cbca83d345cbacc327e335de2d&amp;chksm=fa0e6653cd79ef45a9566cd8ea947d122cfde8e1c9459332e4d7d04f06644fc7a6e81da7ee10&amp;scene=0&amp;xtrack=1&amp;key=034516426b2066d034c7c1b29870ede14e8a92b4535b464417555eba97ffe9cb08b0adf1bed2cd2cacdd73d13e652ee5856b3c801071439294a57ca6c1dabaa8bf97d0b015a0f622d6a99a12f2aa990d&amp;ascene=1&amp;uin=MjgyMTkzMDA4NA%3D%3D&amp;devicetype=Windows+10&amp;version=62060833&amp;lang=zh_CN&amp;pass_ticket=2s0OQl6S2cyRyPHwnDgNJKM3678%2F2wSuNoGHFaGq9qSejQtHFU3wZMAHfkIJm5Wr]]></content>
+      <categories>
+        <category>算法</category>
+      </categories>
+      <tags>
+        <tag>模式匹配</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[JS每日练习]]></title>
     <url>%2F2019%2F07%2F16%2Fjs-lianxi%2F</url>
     <content type="text"><![CDATA[浏览器控制台上会打印什么123456var a = 10;function foo() &#123; console.log(a); var a = 20;&#125;foo(); 答案是：undefined原因：在执行函数前，js 引擎会先扫描代码块，变量声明提升到代码的最前面.这样的话，实际打印的 a 就是 undefined. 12345function foo() &#123; var a; console.log(a); a = 20;&#125; 如果我们使用 let 或 const 代替 var，输出是否相同12345function foo() &#123; console.log(a); let a = 20;&#125;foo(); 答案是会抛出异常： Uncaught ReferenceError: Cannot access ‘a’ before initialization这是因为 let 和 const 可以让变量在其作用域上受限于它使用的代码块，语句或表达式。这时的 a 会放在 TDZ 区域。只有执行到声明才能访问到它。 “newArray”中有哪些元素？123456var array = [];for (var i = 0; i &lt; 3; i++) &#123; array.push(() =&gt; i);&#125;var newArray = array.map(e =&gt; e());console.log(newArray); 答案是[3,3,3], 首先数组中保存了 3 个函数对象，在做 map 时，分别执行每一个函数，函数执行后返回 i，i 此时是全局变量 3，所以在数组中一共是 3 个 3. 如果我们在浏览器控制台中运行 foo 函数，是否会导致堆栈溢出错误123function foo() &#123; setTimeout(foo, 0);&#125; 答案是不会，调用 foo 会将 foo 函数推入堆栈，在处理内部代码时，js 引擎遇到 setTimeout，将 foo 函数传递给 webapi，并从函数返回，调用栈为空，计数器被设置为 0，foo 被发送到任务队列，由于此时调用栈为空，事件循环将 foo 推入调用栈进行处理，进程再次重复，堆栈不会溢出。 如果控制台中运行以下函数，页面是否会响应123function foo() &#123; return Promise.resolve().then(foo);&#125; 答案是不会响应，微任务队列总是在执行后返回到事件循环前清空，只有在微任务队列为空时，事件循环才会重新渲染。 我们能否以某种方式为下面的语句使用展开运算符而不导致类型错误12var obj = &#123; x: 1, y: 2, z: 3 &#125;;[...obj]; 答案是通过为 obj 添加[Symbol.iterator]函数 12345678910111213obj[Symbol.iterator] = function() &#123; return &#123; next: function() &#123; if (this._countDown === 3) &#123; const last = this._countDown; return &#123; value: last, done: true &#125;; &#125; this._countDown++; return &#123; value: this._countDown, done: false &#125;; &#125;, _countDown: 0 &#125;;&#125;; 运行以下代码片段会打印什么123456var obj = &#123; a: 1, b: 2 &#125;;Object.setPrototypeOf(obj, &#123; c: 3 &#125;);Object.defineProperty(obj, d, &#123; value: 4, enumerable: false &#125;);for (let prop in obj) &#123; console.log(prop);&#125; 答案是 a b c xGetter()会打印什么1234567891011var x = 10;var foo = &#123; x = 90; getX: function() &#123; return this.x; &#125;&#125;foo.getX();var xGetter = foo.getX;xGetter(); 会打印 10, 这里的 this 指向的是全局变量 10]]></content>
@@ -63,8 +85,8 @@
         <category>interview</category>
       </categories>
       <tags>
-        <tag>css</tag>
         <tag>js</tag>
+        <tag>css</tag>
       </tags>
   </entry>
   <entry>
